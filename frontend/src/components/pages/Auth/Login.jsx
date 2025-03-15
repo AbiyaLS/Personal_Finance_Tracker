@@ -33,27 +33,27 @@ export default function Login() {
     <div className="login-container">
        <div className="left-section">
     <h1 >Expense Tracker</h1>
-     <div className='h2 '>Welcome Back</div>
-     <p>Please enter your details to login</p>
+     <div className='h22 '>Welcome Back</div>
+     <p className='p1'>Please enter your details to login</p>
      <form onSubmit={handleLogin}>
       {/* Email field */}
       <label>Email Address</label>
       <div>
       <input value={email}
       onChange={({target}) => setEmail(target.value)}
-      type="email" placeholder="example@gmail.com" required /></div>
+      type="email" placeholder="example@gmail.com" className='input-container'/></div>
       {/* Password Field */}
       <label>Password</label>
-      <div>
+      <div >
             <input
               value={password}
               onChange={({ target }) => setPassword(target.value)}
               type="pass" 
               placeholder="Min 8 Characters"
-              required
+              className='input-container'
             />
           </div>
-          {error && <p style={{ color: 'red' }}>{error}</p>}
+          {error && <div className="error-message">{error}</div>}
      <button type="submit">LOGIN</button>
      </form>
      <p>

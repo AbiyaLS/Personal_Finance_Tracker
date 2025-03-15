@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import './components/style/Dashboard.css'
 import './components/style/Login.css'
+import './components/style/ProfilePhotoSelector.css'
 import Dashboard from './components/pages/Dashboard'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/pages/Auth/Login'

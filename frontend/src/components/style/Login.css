@@ -30,6 +30,12 @@ h1 {
     font-size: 26px;
     font-weight: bold;
     color: #6a0dad;
+    margin-bottom: 200px;
+}
+.h11{
+    font-size: 26px;
+    font-weight: bold;
+    color: #6a0dad;
     margin-bottom: 60px;
 }
 
@@ -39,7 +45,18 @@ h1 {
     margin-bottom: 5px;
     margin-right: 0px;
 }
-
+.h22{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-right: 0px;
+}
+.p1{
+    color: gray;
+    font-size: 15px;
+    margin-bottom: 20px;
+   
+}
 p {
     color: gray;
     font-size: 15px;
@@ -50,9 +67,9 @@ label{
 }
 
 /* Input Fields */
-input {
+.input-container {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     border: 2px solid #6a0dad;
     border-radius: 8px;
     background-color: #f8faff;
@@ -67,6 +84,12 @@ input:focus {
     background-color: white;
     box-shadow: 0px 0px 10px rgba(106, 13, 173, 0.3);
 }
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: bold;
+  }
 
 /* Button */
 button {
@@ -129,3 +152,4 @@ button:hover {
         height: 250px;
     }
 }
+
