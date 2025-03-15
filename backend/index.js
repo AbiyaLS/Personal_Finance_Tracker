@@ -1,24 +1,29 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const { db } = require("./db/db");
-const { readdirSync } =require('fs');
-const { route } = require("./routes/transactions");
-require("dotenv").config();
+const path = require("path");
+const connectDB = require("./db/db");
+const authRoutes =require('./routes/authRoutes')
+
 
 const app = express();
-const PORT = process.env.PORT || 4000; 
 
-//middlewares
-app.use(express.json())
-app.use(cors())
+// Middlewares
+app.use(
+    cors({
+        origin: process.env.CLIENT_URL || "*",
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        allowedHeaders: ["Content-Type", "Authorization"], // Fixed typo
+    })
+);
+app.use(express.json());
 
-//router    
-readdirSync('./routes').map((route)=> app.use('/api/v1',require('./routes/' + route)))
+// Connect to database
+connectDB();
+app.use("/api/v1/auth",authRoutes);
+const PORT = process.env.PORT || 5002;
 
-const server =() =>{
-    db()
-    app.listen(PORT, () => {
-    console.log(`Server connected successfully on port`);
-})
-}
-server()
+// Router (Uncomment if you have routes)
+// readdirSync('./routes').map((route) => app.use('/api/v1', require('./routes/' + route)));
+
+app.listen(PORT, () => console.log(`Server connected successfully on port ${PORT}`));
