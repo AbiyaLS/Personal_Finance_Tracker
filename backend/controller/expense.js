@@ -1,35 +1,38 @@
-const ExpenseSchema = require("../models/expenseModels")
+const Expense = require("../models/expenseModels")
 
 //Add expense to the db
 const addExpense = async (req,res)=>{
-  const {title, amount,category,description,date}  = req.body
-  const expense =ExpenseSchema({
-    title, amount, category, description, date
-  })
+    const userId =req.user.id;
 try {
+    const {category,amount,date}  = req.body
     //validation
-    if(!title || !category || !description || !date){
+    if(!category || !amount || !date){
         return res.status(400).json({
          message : "All Field are required!"
         })
     }
-    if(amount <= 0 || !amount === "number"){
-        return res.status(400).json({
-         message : "All Field are required!"
-        })
+    const parsedDate = new Date(date);
+    if (isNaN(parsedDate.getTime())) {  // If date is invalid
+        return res.status(400).json({ message: "Invalid date format!" });
     }
-    await expense.save()
-    res.status(200).json({ message: "Expense Added" }); 
+
+    const newExpense = new Expense({
+        userId,
+        category,amount,
+        date: parsedDate
+    });
+    await newExpense.save()
+    res.status(200).json(newExpense); 
 } catch (error) {
     res.status(500).json({ message: "Server Error" });
 }
-console.log(expense)
 }
 
 //get expense from the db
 const getExpense =async (req,res)=>{
+    const userId =req.user.id;
     try {
-        const expenses =await ExpenseSchema.find().sort({createdAt : -1})
+        const expenses =await Expense.find({userId}).sort({date : -1})
         res.status(200).json(expenses)
     } catch (error) {
         res.status(500).json({message : "Server Error"})
@@ -38,15 +41,12 @@ const getExpense =async (req,res)=>{
 
 //delete expense from db
 const deleteExpense =async(req,res) =>{
-    const {id} =req.params
-    ExpenseSchema.findByIdAndDelete(id)
-    .then((expense)=>{
-        res.status(200).json({message : "Delete Expense Successfully"})
-    }).catch((error)=>{
-        res.status(200).json({message : "Delete Expense Successfully"})
-    })
-
-    
+    try {
+        await Expense.findByIdAndDelete(req.params.id)
+        res.json({message : "Expense deleted successfully"})
+    } catch (error) {
+        res.status(500).json({message : "Server Error"})
+    }
 }
 
 

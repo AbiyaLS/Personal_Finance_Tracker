@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { LuUser, LuTrash, LuUpload } from "react-icons/lu";
+import "../style/ProfilePhotoSelector.css"
 
 
 const ProfilePhotoSelector = ({ image, setImage }) => {

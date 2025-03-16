@@ -4,6 +4,9 @@ const cors = require("cors");
 const path = require("path");
 const connectDB = require("./db/db");
 const authRoutes =require('./routes/authRoutes')
+const incomeRoutes = require('./routes/incomeRoutes')
+const expenseRoutes = require('./routes/expenseRoutes')
+const dashboardRoutes = require('./routes/dashboardRoutes')
 
 
 const app = express();
@@ -13,7 +16,7 @@ app.use(
     cors({
         origin: process.env.CLIENT_URL || "*",
         methods: ["GET", "POST", "PUT", "DELETE"],
-        allowedHeaders: ["Content-Type", "Authorization"], // Fixed typo
+        allowedHeaders: ["Content-Type", "Authorization"], 
     })
 );
 app.use(express.json());
@@ -21,9 +24,11 @@ app.use(express.json());
 // Connect to database
 connectDB();
 app.use("/api/v1/auth",authRoutes);
+app.use("/api/v1/income",incomeRoutes);
+app.use("/api/v1/expense",expenseRoutes);
+app.use("/api/v1/dashboard",dashboardRoutes)
+//server upload folder
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
 const PORT = process.env.PORT || 5002;
-
-// Router (Uncomment if you have routes)
-// readdirSync('./routes').map((route) => app.use('/api/v1', require('./routes/' + route)));
-
 app.listen(PORT, () => console.log(`Server connected successfully on port ${PORT}`));
