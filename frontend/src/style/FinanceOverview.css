@@ -1,0 +1,35 @@
+/* Finance Overview Container */
+.finance-overview {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    /* margin: 20px auto; */
+  }
+  
+  /* Header Styling */
+  .finance-overview-header h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  /* Centering Chart */
+  .finance-overview-chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .finance-overview {
+      width: 90%;
+      padding: 15px;
+    }
+  }
+  

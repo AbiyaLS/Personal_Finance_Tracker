@@ -1,19 +1,19 @@
 import { useState } from 'react'
 
-import './components/style/Dashboard.css'
-import './components/style/Login.css'
-import Dashboard from './components/pages/Dashboard'
+import "./style/Dashboard.css"
+import "./style/Login.css"
+import Dashboard from './pages/dashboard/Dashboard'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './components/pages/Auth/Login'
-import SignUp from './components/pages/Auth/SignUp'
-import Income from './components/pages/Income'
-import Expense from './components/pages/Expense'
+import Login from './pages/Auth/Login'
+import SignUp from './pages/Auth/SignUp'
+import Income from './pages/dashboard/Income'
+import Expense from './pages/dashboard/Expense'
+import UserProvider from './content/UserContent';
 
 
 function App() {
   return (
-    <>
-   
+   <UserProvider>
     <div>
       <Router>
         <Routes>
@@ -26,7 +26,8 @@ function App() {
         </Routes>
       </Router>
     </div>
-    </>
+    </UserProvider>
+
   )
 } 
 

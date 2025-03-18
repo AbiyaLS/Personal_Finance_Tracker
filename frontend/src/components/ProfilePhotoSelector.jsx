@@ -1,17 +1,24 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { LuUser, LuTrash, LuUpload } from "react-icons/lu";
-import "../style/ProfilePhotoSelector.css"
-
+import "../style/ProfilePhotoSelector.css";
 
 const ProfilePhotoSelector = ({ image, setImage }) => {
   const inputRef = useRef(null);
   const [previewUrl, setPreviewUrl] = useState(null);
 
+  // Sync previewUrl with image prop (if it's a URL)
+  useEffect(() => {
+    if (image && typeof image === "string") {
+      setPreviewUrl(image);
+    }
+  }, [image]);
+
   const handleImageChange = (event) => {
-    const file = event.target.files[0]; // Fixed file selection
+    const file = event.target.files[0]; // Get selected file
     if (file) {
-      setImage(file);
-      setPreviewUrl(URL.createObjectURL(file));
+      const objectUrl = URL.createObjectURL(file);
+      setPreviewUrl(objectUrl);
+      setImage(file); // Ensure parent receives correct file
     }
   };
 
@@ -24,6 +31,15 @@ const ProfilePhotoSelector = ({ image, setImage }) => {
     inputRef.current.click();
   };
 
+  // Cleanup old object URLs when component unmounts or when previewUrl changes
+  useEffect(() => {
+    return () => {
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl);
+      }
+    };
+  }, [previewUrl]);
+
   return (
     <div className='pic-container'>
       <input
@@ -33,7 +49,7 @@ const ProfilePhotoSelector = ({ image, setImage }) => {
         onChange={handleImageChange}
         style={{ display: "none" }}
       />
-      {!image ? (
+      {!previewUrl ? (
         <div className='img-container'>
           <LuUser className='luuser' />
           <button 

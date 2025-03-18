@@ -26,43 +26,27 @@ body {
     padding: 40px;
 }
 
-h1 {
-    font-size: 26px;
-    font-weight: bold;
-    color: #6a0dad;
-    margin-bottom: 200px;
-}
-.h11{
+h1, .h11 {
     font-size: 26px;
     font-weight: bold;
     color: #6a0dad;
     margin-bottom: 60px;
 }
 
-.h2 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    margin-right: 0px;
-}
-.h22{
+.h2, .h22 {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 20px;
     margin-right: 0px;
 }
-.p1{
+
+.p1, p {
     color: gray;
     font-size: 15px;
     margin-bottom: 20px;
-   
 }
-p {
-    color: gray;
-    font-size: 15px;
-    margin-bottom: 10px;
-}
-label{
+
+label {
     color: gray;
 }
 
@@ -77,24 +61,25 @@ label{
     color: #333;
     outline: none;
     transition: 0.3s;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 }
 
 input:focus {
     background-color: white;
     box-shadow: 0px 0px 10px rgba(106, 13, 173, 0.3);
 }
+
 .error-message {
     color: red;
     font-size: 14px;
     margin-top: 5px;
     font-weight: bold;
-  }
+}
 
 /* Button */
 button {
-    width: 100%;
-    padding: 12px;
+    width: 109vb;
+    padding: 16px;
     margin-top: 20px;
     border: none;
     background: #6a0dad;
@@ -134,7 +119,6 @@ button:hover {
     align-items: center;
 }
 
-
 /* Responsive Design */
 @media (max-width: 900px) {
     .login-container {
@@ -146,10 +130,64 @@ button:hover {
     .left-section, .right-section {
         width: 100%;
         text-align: center;
+        padding: 20px;
     }
 
     .right-section {
         height: 250px;
     }
+
+    h1, .h11 {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    .h2, .h22 {
+        font-size: 18px;
+    }
+
+    p, .p1 {
+        font-size: 14px;
+    }
+
+    .input-container {
+        font-size: 14px;
+        padding: 12px;
+        max-width: 100%; /* Ensures input fields adapt correctly */
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
 }
 
+/* For smaller devices like mobile phones */
+@media (max-width: 600px) {
+    .login-container {
+        padding: 10px;
+    }
+
+    .left-section {
+        padding: 10px;
+    }
+
+    h1, .h11 {
+        font-size: 20px;
+    }
+
+    .input-container {
+        font-size: 14px;
+        padding: 10px;
+        max-width: 100%; /* Ensures input fields remain usable */
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .right-section {
+        height: 200px;
+    }
+}

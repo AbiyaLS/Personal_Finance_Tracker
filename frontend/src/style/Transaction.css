@@ -1,0 +1,138 @@
+/* ✅ Container for Recent Transactions */
+.recent-transactions-container {
+  width: 100%;
+  max-width: 570px; /* Adjusted for better compactness */
+  background-color: white;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+
+}
+.text1{
+  font-size: larger;
+}
+
+/* ✅ Header for Transactions */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* ✅ "See All" Button */
+.see-all-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s;
+}
+
+.see-all-btn:hover {
+  color: #0056b3;
+}
+
+/* ✅ Transaction Card */
+.transaction-card {
+  background-color: white;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.304);
+  width: 100%;
+  max-width: 545px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ✅ Transaction Details */
+.transaction-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* ✅ Transaction Info */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.transaction-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.transaction-date {
+  font-size: 12px;
+  color: #777;
+}
+
+/* ✅ Amount Box */
+.amount-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 13px;
+  min-width: 90px;
+  justify-content: center;
+}
+
+/* ✅ Income & Expense Styles */
+.income-style {
+  background: #e6f7e6;
+  color: #28a745;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.expense-style {
+  background: #ffe6e6;
+  color: #dc3545;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* ✅ Transactions List */
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+  .recent-transactions-container {
+    max-width: 350px;
+  }
+
+  .transaction-card {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recent-transactions-container {
+    width: 100%;
+    padding: 12px;
+    max-width: 100%;
+  }
+
+  .transaction-card {
+    width: 100%;
+    padding: 10px;
+    max-width: 280px;
+  }
+}
