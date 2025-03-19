@@ -1,7 +1,9 @@
 /* Global Styles */
-body {
-  margin: 0;
+body,html {
+  /* margin: 10; */
   font-family: 'Poppins', sans-serif;
+  overflow-y: auto;
+  /* margin-bottom: 100px; */
 }
 
 /* Main Container */
@@ -11,6 +13,8 @@ body {
   height: 100vh;
   background-color: rgba(236, 229, 229, 0.463);
   color: black;
+  overflow-y: auto; 
+  min-height: 100vh;
 }
 
 /* Sidebar */
@@ -21,7 +25,7 @@ body {
   top: 60px; /* Push down below the navbar */
   height: calc(100vh - 60px);
   background-color: white;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow:  4px 4px 10px #8854d03c;
 }
 
 /* Navbar */
@@ -37,7 +41,7 @@ body {
   align-items: center;
   font-size: 20px;
   font-weight: bold;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 8px #8854d052;
   z-index: 1000;
   /* margin-top: 10px; */
 }
@@ -98,7 +102,7 @@ body {
   align-items: center;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow:  4px 4px 10px #8854d03c;
   width: 300px;
   background-color: white;
 }
@@ -155,7 +159,7 @@ body {
   display: flex;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow:  4px 4px 10px #8854d03c;
   width: 300px; /* Adjusted width for better fit */
   background-color: white;
   transition: all 0.3s ease-in-out;
@@ -164,7 +168,7 @@ body {
 
 .info-card:hover {
   transform: translateY(-5px);
-  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  box-shadow:  4px 4px 15px #8854d07a;
 }
 
 /* Icon Styling */
@@ -238,11 +242,11 @@ body {
 .transaction-container {
   display: flex;
 gap: 20px;
-  /* justify-content: space-between; */
   width: 100%;
-  /* margin-top: 20px;
-  margin-left: 5px; */
+  max-height: 700px; /* Adjust height as needed */
+  overflow-y: auto;
   margin: 10px;
+  overflow: auto;
 }
 
 .finance-overview,

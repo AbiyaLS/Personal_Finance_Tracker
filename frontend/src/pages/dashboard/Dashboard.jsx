@@ -41,7 +41,7 @@ export default function Dashboard() {
 
   return (
     <div className="main-container">
-      <div className="navbar"><h4>Expense Tracker</h4></div>
+      <div className="navbar"><h4>Finance Tracker</h4></div>
       <Sidebar />
       <div className="dashboard-content">
         <div className='boxes'>

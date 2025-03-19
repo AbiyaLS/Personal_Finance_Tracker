@@ -36,7 +36,7 @@ export default function Sidebar() {
           </Link>
         </li>
         <li>
-          <Link to="/expenses">
+          <Link to="/expense">
             <FaMoneyBillWave className="profile-icon" /> Expenses
           </Link>
         </li>

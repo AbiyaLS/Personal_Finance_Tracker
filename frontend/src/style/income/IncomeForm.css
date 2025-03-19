@@ -1,0 +1,53 @@
+/* Form Container */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow:  4px 4px 10px #8854d03c;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Labels */
+  .form-container label {
+    font-weight: bold;
+    color: #444;
+    font-size: 14px;
+  }
+  
+  /* Input Fields */
+  .form-container input {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .form-container input:focus {
+    border-color: #8854d0;
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    background: #8854d0;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 10px;
+  }
+  
+  .submit-btn:hover {
+    background: #6d3cb3;
+  }
+  

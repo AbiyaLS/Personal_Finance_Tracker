@@ -12,12 +12,12 @@ export const API_PATH = {
     INCOME: {
         ADD_INCOME: "/api/v1/income/add-income",
         GET_ALL_INCOME: "/api/v1/income/get-incomes",
-        DELETE_INCOME: (incomeId) => `/api/v1/income/delete-income/${incomeId}`,
+        DELETE_INCOME: (incomeId) => `/api/v1/income/${incomeId}`,
     },
     EXPENSE: {
         ADD_EXPENSE: "/api/v1/expense/add-expense",
         GET_ALL_EXPENSE: "/api/v1/expense/get-expenses",
-        DELETE_EXPENSE: (expenseId) => `/api/v1/expense/delete-expense/${expenseId}`,
+        DELETE_EXPENSE: (expenseId) => `/api/v1/expense/${expenseId}`,
     },
     IMAGE: {
         UPLOAD_IMAGE: "/api/v1/auth/upload-image",

@@ -8,4 +8,7 @@ export const addThousandsSeparator = (num) => {
   
     return num.toLocaleString();
   };
+//   export const prepareIncomeBarChartData=(data=[])=>{
+//     const sortedData = [..data].sort()
+//   }
   

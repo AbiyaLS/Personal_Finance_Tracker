@@ -6,6 +6,7 @@ import { validateEmail } from "../../utils/helper";
 import { API_PATH } from "../../utils/apiPath";
 import axiosInstance from "../../utils/axiosinstance";
 import { UserContext } from "../../content/UserContent"; // Corrected import
+import "../../style/Login.css"
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -56,7 +57,7 @@ export default function Login() {
   return (
     <div className="login-container">
       <div className="left-section">
-        <h1>Expense Tracker</h1>
+        <h1>Finance Tracker</h1>
         <div className="h22">Welcome Back</div>
         <p className="p1">Please enter your details to login</p>
         <form onSubmit={handleLogin}>
@@ -87,7 +88,7 @@ export default function Login() {
           </div>
 
           {error && <div className="error-message">{error}</div>}
-          <button type="submit" disabled={loading}>
+          <button className="login-button" type="submit" disabled={loading}>
             {loading ? "Logging in..." : "LOGIN"}
           </button>
         </form>
@@ -105,4 +106,4 @@ export default function Login() {
       </div>
     </div>
   );
-}
+}                  

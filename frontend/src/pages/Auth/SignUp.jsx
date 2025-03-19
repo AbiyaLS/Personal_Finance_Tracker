@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
-import "../../style/Login.css";
+import "../../style/Login.css"
 import animation1 from "../../assets/animation1.json";
 import ProfilePhotoSelector from "../../components/ProfilePhotoSelector";
 import { validateEmail } from "../../utils/helper";
@@ -9,6 +9,7 @@ import axiosInstance from "../../utils/axiosinstance";
 import { API_PATH } from "../../utils/apiPath";
 import { UserContext } from "../../content/UserContent";
 import uploadImage from "../../utils/uploadImage";
+
 
 export default function SignUp() {
   const [profilePic, setProfilePic] = useState(null);
@@ -79,8 +80,8 @@ export default function SignUp() {
   return (
     <div className="login-container">
       <div className="left-section">
-        <h1>Expense Tracker</h1>
-        <p>Create an Account</p>
+        <h1>Finance Tracker</h1>
+        <p className="account-p">Create an Account</p>
 
         <ProfilePhotoSelector image={profilePic} setImage={setProfilePic} />
 
@@ -96,10 +97,10 @@ export default function SignUp() {
 
           {error && <p className="error">{error}</p>}
 
-          <button type="submit" disabled={loading}>{loading ? "Signing Up..." : "SIGN UP"}</button>
+          <button className="login-button" type="submit" disabled={loading}>{loading ? "Signing Up..." : "SIGN UP"}</button>
         </form>
 
-        <p>Already have an account? <Link to="/login">Login</Link></p>
+        <p>Already have an account? <Link to="/login"className="login-link ">Login</Link></p>
       </div>
 
       <div className="right-section">

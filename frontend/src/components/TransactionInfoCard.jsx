@@ -1,8 +1,9 @@
 import React from "react";
 import { LuTrendingUp, LuTrendingDown } from "react-icons/lu";
+import { MdDelete } from "react-icons/md"; // ✅ Import Delete Icon
 import "../style/Transaction.css";
 
-export default function TransactionInfoCard({ title, date, amount, type }) {
+export default function TransactionInfoCard({ title, date, amount, type, }) {
   return (
     <div className="transaction-card">
       <div className="transaction-details">
@@ -17,6 +18,9 @@ export default function TransactionInfoCard({ title, date, amount, type }) {
           {type === "income" ? <LuTrendingUp /> : <LuTrendingDown />}
         </div>
       </div>
+
+      
     </div>
   );
 }
+

@@ -1,12 +1,12 @@
-/* Body Styling */
-body {
+ /* Body Styling */
+ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh; 
-    background-color: #f4f7fa; 
+    /* background: linear-gradient(135deg, #6a0dad, #8a2be2); */
 }
 
 /* Main container - Full screen */
@@ -18,6 +18,7 @@ body {
     height: 100vh;
     padding: 40px;
     box-sizing: border-box;
+     background: linear-gradient(135deg, #6a0dad, #8a2be2);
 }
 
 /* Left Section - Form */
@@ -29,7 +30,7 @@ body {
 h1, .h11 {
     font-size: 26px;
     font-weight: bold;
-    color: #6a0dad;
+    color: #ffffff;
     margin-bottom: 60px;
 }
 
@@ -40,14 +41,15 @@ h1, .h11 {
     margin-right: 0px;
 }
 
-.p1, p {
-    color: gray;
-    font-size: 15px;
+.p1,p {
+    color: rgb(215, 202, 202);
+    font-size: 18px;
     margin-bottom: 20px;
 }
 
 label {
-    color: gray;
+    color: rgb(238, 146, 9);
+    font-size: large;
 }
 
 /* Input Fields */
@@ -77,12 +79,12 @@ input:focus {
 }
 
 /* Button */
-button {
+.login-button {
     width: 109vb;
     padding: 16px;
     margin-top: 20px;
     border: none;
-    background: #6a0dad;
+    background: rgb(238, 146, 9);
     color: white;
     font-size: 16px;
     border-radius: 8px;
@@ -92,14 +94,14 @@ button {
     margin-bottom: 5px;
 }
 
-button:hover {
-    background: #5a0cad;
+.login-button:hover {
+    background: #a465e8;
     transform: scale(1.02);
 }
 
 /* Signup Link */
 .signup-link {
-    color: #6a0dad;
+    color: #f1eff2;
     font-weight: bold;
     text-decoration: none;
     transition: 0.3s;
@@ -107,7 +109,18 @@ button:hover {
 
 .signup-link:hover {
     text-decoration: underline;
-    color: #5a0cad;
+    color: rgb(238, 146, 9);
+}
+.login-link {
+    color: #f1eff2;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+    color: rgb(238, 146, 9);
 }
 
 /* Right Section - Lottie Animation */
@@ -156,7 +169,7 @@ button:hover {
         max-width: 100%; /* Ensures input fields adapt correctly */
     }
 
-    button {
+    .login-button {
         font-size: 14px;
         padding: 10px;
     }
@@ -182,7 +195,7 @@ button:hover {
         max-width: 100%; /* Ensures input fields remain usable */
     }
 
-    button {
+   .login-button {
         font-size: 14px;
         padding: 10px;
     }

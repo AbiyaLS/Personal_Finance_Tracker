@@ -1,0 +1,39 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+.income-dasboard{
+    position: fixed; 
+  top: 60px; 
+  left: 250px; 
+  width: 100%;
+  margin-left: 42px;
+  height: calc(100vh - 60px); 
+  overflow-y: auto;
+  /* background-color: hsl(0, 91%, 47%); */
+  /* margin-top: 20px; */
+  padding: 20px;
+  display: grid;
+ 
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: fixed;
+      top: 60px;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 10px;
+    }
+  
+    .dashboard-content {
+      width: 100%;
+      margin-left: 0;
+      /* margin-top: 100px; Adjusted to avoid overlapping */
+    }
+  }

@@ -11,7 +11,7 @@
   position: fixed;
   top: 60px; /* Below Navbar */
   left: 0;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 10px #8854d052;
   transition: all 0.3s ease-in-out;
 }
 

@@ -1,0 +1,41 @@
+.income-overview-container {
+    background: rgba(255, 255, 255, 0.737);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px #8854d03c;
+    margin-right: 340px;
+    max-width: none;
+    position: relative;
+  }
+  
+  
+  .income-overview-container h3 {
+    font-size: 20px;
+    font-weight: bold;
+    /* background-color: aqua; */
+  }
+  
+  .income-overview-container p {
+    color: #666666;
+    margin-bottom: 15px;
+   
+  }
+  .income-overview-container button {
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    background-color: #e3b2ff89;
+    color: #8854d0;
+    font-weight: bold;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.income-overview-container button:hover {
+    background-color: #c689ff93;
+}
+  
+  
