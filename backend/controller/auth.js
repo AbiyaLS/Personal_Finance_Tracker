@@ -27,7 +27,7 @@ const registerUser = async (req, res) => {
         const user = await User.create({
             fullName,
             email,
-            password, // Don't hash it manually, let Mongoose handle it
+            password, 
             profileImage,
         });
 

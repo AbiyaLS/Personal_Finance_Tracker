@@ -13,7 +13,7 @@ export default function CustomBarChart({ data, colors }) {
           {data.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
           ))}
-        </Bar>
+        </Bar>  
       </BarChart>
     </ResponsiveContainer>
   );

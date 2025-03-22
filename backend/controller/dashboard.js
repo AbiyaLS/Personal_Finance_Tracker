@@ -7,9 +7,7 @@ const getDashboardData= async (req, res) =>{
     try {
       const userId = req.user.id;
       const userObjectId =new Types.ObjectId(String(userId)) ;
-    //   if (!isValidObjectId(userId)) {
-    //     return res.status(400).json({ message: "Invalid user ID" });
-    // }
+  
       
       // fetch total income 
       const totalIncome = await Income.aggregate([
@@ -23,26 +21,7 @@ const getDashboardData= async (req, res) =>{
         { $group:{_id: null,total: {$sum: "$amount"}}}
       ]);
 
-      //Get income transaction in the last 60 days
-      const last60daysIncomeTransaction = await Income.find({
-        userId,
-        date: {$gte: new Date(Date.now() -60 *24 * 60 *60*1000)},
-      }).sort({date:-1});
-
-      //get total income from last 60 days
-      const incomeLast60days = last60daysIncomeTransaction.reduce(
-        (sum,transaction) => sum + transaction.amount,0
-      );
-       //Get expense transaction in the last 60 days
-       const last30daysExpenseTransaction = await Expense.find({
-        userId,
-        date: {$gte: new Date(Date.now() -30 *24 * 60 *60*1000)},
-      }).sort({date:-1});
-
-      //get total expense from last 60 days
-      const expenseLast30days = last30daysExpenseTransaction.reduce(
-        (sum,transaction) => sum + transaction.amount,0
-      );
+     
       //fetch last 5 transaction (income + expense)
       const lastTransaction = [
         ...(await Income.find({ userId }).sort({ date:-1 }).limit(5)).map(
@@ -64,14 +43,7 @@ const getDashboardData= async (req, res) =>{
         totalBalance:(totalIncome[0]?.total || 0) - (totalExpense[0]?.total || 0),
         totalIncome : totalIncome[0]?.total || 0,
         totalExpense : totalExpense[0]?.total || 0,
-        last30daysExpense:{
-            total : expenseLast30days,
-            transaction : last30daysExpenseTransaction,
-        },
-        last60daysIncome:{
-            total : incomeLast60days,
-            transaction : last60daysIncomeTransaction,
-        },
+       
         recentTransaction : lastTransaction
         
       })

@@ -7,7 +7,7 @@ import axiosInstance from '../../utils/axiosinstance';
 import { API_PATH } from '../../utils/apiPath';
 import InfoCard from '../../components/InfoCard';
 import { FaMoneyBillWave } from "react-icons/fa";
-import RecentTransaction from '../../components/RecentTransaction'; // ✅ Import this
+import RecentTransaction from '../../components/RecentTransaction'; 
 import FinanceOverview from '../../components/FinanceOverview';
 
 export default function Dashboard() {
